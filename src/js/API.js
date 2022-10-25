@@ -10,7 +10,7 @@ export default class API {
 
   stream() {
     this.newMsg$ = ajax.getJSON('https://asuch-rxjs.herokuapp.com/messages/unread');
-    return interval(2000).pipe(
+    return interval(4000).pipe(
       switchMap((value) => this.newMsg$),
       map((value) => value.messages),
     );
@@ -19,8 +19,8 @@ export default class API {
   init() {
     this.stream$ = this.stream();
     this.stream$.subscribe((messages) => {
-      messages.forEach(msg => {
-        this.message.render(message.from, message.subject, message.received);
+      messages.forEach((msg) => {
+        this.message.render(msg.from, msg.subject, msg.received);
       });
     });
   }

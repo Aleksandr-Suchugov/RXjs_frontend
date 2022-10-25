@@ -1,5 +1,3 @@
-import { VirtualTimeScheduler } from "rxjs";
-
 export default class Message {
   constructor() {
     this.list = document.querySelector('.messages_list');
@@ -8,7 +6,7 @@ export default class Message {
   render(email, text, time) {
     this.email = email.length <= 20 ? email : `${email.substr(0, 20)}...`;
     this.text = text.length <= 15 ? text : `${text.substr(0, 15)}...`;
-    
+
     // this.messageItem = document.createElement('div');
     // this.messageItem.className = 'message';
     // this.contactEl = document.createElement('div');
