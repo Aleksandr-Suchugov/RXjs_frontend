@@ -1,0 +1,39 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  max-width: 100%;
+}
+
+.container {
+  font-family: Arial, sans-serif;
+}
+
+.messages {
+  width: 550px;
+  padding: 15px;
+  margin: 100px auto;
+}
+
+.inbox, .messages_list {
+  margin-bottom: 15px;
+}
+  
+.message {
+  display: flex;
+  padding: 15px;
+  border: 1px solid grey;
+}
+
+.message:nth-of-type(n + 2) {
+  border-top: none;
+}
+
+.contact {
+  width: 225px;
+}
+
+.timestamp {
+  margin-right: 0;
+  margin-left: auto;
+}
