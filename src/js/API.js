@@ -11,7 +11,7 @@ export default class API {
   stream() {
     this.newMsg$ = ajax.getJSON('https://asuch-rxjs.herokuapp.com/messages/unread');
     return interval(4000).pipe(
-      switchMap((value) => this.newMsg$),
+      switchMap(() => this.newMsg$),
       map((value) => value.messages),
     );
   }
